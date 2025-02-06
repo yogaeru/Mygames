@@ -13,8 +13,6 @@ const board = ['x', 'x', 'x', " ", 'O', " ", 'o', " ", " "];
 //     console.log(winner);
 // })
 
-
-
 // some mengambil elemen disetiap winPattern contoh pattern akan mengambil elemen pertama yaitu [0,1,2] lalu
 // every akan mengecek semua kondisi di pattern apakah bernilai true semua jika iya akan return true dan sebaliknya
 // every akan mengecek board[index] apakah dengan board[pattern[0]], misal parttern [0,1,2]
@@ -24,7 +22,6 @@ const board = ['x', 'x', 'x', " ", 'O', " ", 'o', " ", " "];
 
 winPatterns.some(pattern => {
     console.log(pattern);
- 
     const winner = pattern.every(index => {
         console.log(index);
         console.log(board[index]);
