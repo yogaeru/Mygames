@@ -56,16 +56,35 @@ class TicTacToe {
             [0, 4, 8], [2, 4, 6]             // Diagonal
         ];
 
-        winPatterns.some(pattern => pattern.every(index => this.board[index] !== " " && this.board[index] === this.board[pattern[0]]));
+        // cara 1
+        return winPatterns.some(pattern => pattern.every(index =>
+            this.board[index] !== " " && this.board[index] === this.board[pattern[0]]
+        ));
 
+        // cara 2
+        // return winPatterns.some(pattern => {
+        //     const winner = pattern.every(index => {
+        //         return this.board[index] !== " " && this.board[index] === this.board[pattern[0]]
+        //     });
+        //     return winner;
+        // });
+
+        // cara 3
+        // return winPatterns.some(index => {
+        //     const [a, b, c] = index;
+        //     return this.board[a] !== " " && this.board[a] === this.board[b] && this.board[a] === this.board[c];
+        // });
+
+        // cara 1 dan 2 sama sjaa cuman beda cara penulisan
+        // cara 3 beda cara pengecekan atapi hasilnya tetap sama 
     };
 
-
-resetGame() {
-    this.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
-    this.currentPlayer = "X";
-    this.gameOver = false;
-}
-
+    resetGame() {
+        this.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+        this.currentPlayer = "X";
+        this.gameOver = false;
+        this.result.textContent = "";
+        this.updateBoard();
+    }
 }
 const game = new TicTacToe();
